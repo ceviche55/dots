@@ -1,0 +1,25 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 8,
+    "height": 10,
+    "modules-left": ["clock#time", "sway/workspaces"],
+    //"modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "battery", "pulseaudio", "memory", "clock#cal"],
+    "clock#time": {
+        "format": "{:%I:%M}"
+    },
+    "battery": {
+        "format": " {icon}\n{capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "pulseaudio": {
+        "format": "󰕾 {volume}%"
+    },
+    "memory": {
+        "format": "󰍛 {percentage}%"
+    },
+    "clock#cal": {
+        "format": "{:%a %b %d}"
+    }
+}
