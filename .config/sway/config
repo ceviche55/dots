@@ -1,7 +1,10 @@
 # Sway Config
 # TODO: Set up floating rules for: Spotify, Slack, Discord, PCMANFM, Signal, Telegram
+# TODO: Slow down trackpad scroll
+# TODO: Set up sleep on lid close
 
 ### Startup
+exec nm-applet --indicator &
 exec flatpak run com.github.zocker_160.SyncThingy
 
 ### Variables
@@ -26,7 +29,8 @@ set $ac2 #E39C45
 set $menu tofi-drun
 
 # Output configuration
-output * bg ~/dotfiles/wallpapers/biscuitDark/ethiopianBiscuit.png fill
+output * bg ~/wallpaperDot/biscuitDark/ethiopianBiscuit.png fill
+output eDP-1 scale 1.75
 
 ### Idle configuration
 exec swayidle -w \
