@@ -1,7 +1,7 @@
 # Sway Config
 # TODO: Set up floating rules for: Spotify, Slack, Discord, PCMANFM, Signal, Telegram
-# TODO: Slow down trackpad scroll
 # TODO: Set up sleep on lid close
+# TODO: Set up wayland arandr (eg kanshi)
 
 ### Startup
 exec nm-applet --indicator &
@@ -30,7 +30,6 @@ set $menu tofi-drun
 
 # Output configuration
 output * bg ~/wallpaperDot/biscuitDark/ethiopianBiscuit.png fill
-output eDP-1 scale 1.75
 
 ### Idle configuration
 exec swayidle -w \
@@ -42,25 +41,29 @@ exec swayidle -w \
 input type:touchpad {
     dwt enabled
     tap disabled
+    scroll_factor 0.25
     natural_scroll enabled
     middle_emulation enabled
 }
 
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
+
 ### Window Rules
 for_window [instance="discord"] floating toggle
+for_window [instance="armcord"] floating toggle
+for_window [app_id="imv"] floating toggle
 
 ### Appearance
 gaps inner 15
 gaps outer 25
 
 # Colors                border   bg       text     indi     childborder
-client.focused          $ac1     $ac1     $fg1     $ac2
-client.focused_inactive $bg2     $bg2     $fg1     $ac2
-client.unfocused        $bg2     $bg1     $fg1     $ac2
+client.focused          $ac1     $ac1     $fg1     $ac2     $ac1
+client.focused_inactive $bg2     $bg2     $fg1     $ac2     $bg2
+client.unfocused        $bg2     $bg1     $fg1     $ac2     $bg2
 
 font Fira Sans 11
-
-# default_border pixel 5
 
 ### Key bindings
 bindsym $mod+Return exec $term
@@ -75,6 +78,8 @@ bindsym $mod+Control+2 exec pcmanfm
 # Super + leftMouse = moveWindow
 # Super + rightMouse = resizeWindow
 floating_modifier $mod normal
+
+floating_minimum_size 1200 x 800
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -93,7 +98,7 @@ bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
-# Workspaces:
+# Workspaces
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -116,6 +121,9 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
+bindsym $mod+period workspace next
+bindsym $mod+comma workspace prev
+
 # Layout stuff
 bindsym $mod+b splith
 bindsym $mod+v splitv
@@ -137,15 +145,15 @@ bindsym $mod+Shift+s move scratchpad
 # Special Keys
 
 # Media Keys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
-bindsym XF86MonBrightnessUp exec brightnessctl set 10%+
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 10%+
+bindsym --locked XF86AudioLowerVolume exec wpctl set-volume -l 0 @DEFAULT_AUDIO_SINK@ 10%-
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPrev exec playerctl previous
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 10%+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 10%-
 
 # Resizing containers
 bindsym $mod+r mode "resize"
@@ -164,6 +172,8 @@ mode "resize" {
 #Screenshot stuffs
 bindsym Print exec grim -g "$(slurp)" - | wl-copy
 bindsym Print+Shift exec grim -g "$(slurp)" - | swappy -f -
+bindsym $mod+Alt+3 exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Alt+4 exec grim -g "$(slurp)" - | swappy -f -
 
 ### Bar Configuration
 bar {
@@ -172,3 +182,4 @@ bar {
 
 ### Misc Wayland Configuration
 include /etc/sway/config.d/*
+include ~/.config/swaySpec/specConfig

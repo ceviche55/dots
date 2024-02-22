@@ -45,8 +45,8 @@
 	# Selection text
 	selection-color = #959A6B
 	selection-background = #453636
-	selection-background-padding = 0
-	selection-background-corner-radius = 0
+	selection-background-padding = 4
+	selection-background-corner-radius = 4
 
 	# Matching portion of selection text
 	selection-match-color = #00000000
