@@ -5,6 +5,7 @@ end
 starship init fish | source
 
 fish_add_path ~/.cargo/bin/
+fish_add_path ~/.local/bin/
 
 set fish_greeting
 set -gx EDITOR nvim
