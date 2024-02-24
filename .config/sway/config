@@ -1,7 +1,7 @@
 # Sway Config
 # TODO: Set up floating rules for: Spotify, Slack, Discord, PCMANFM, Signal, Telegram
-# TODO: Set up sleep on lid close
-# TODO: Set up wayland arandr (eg kanshi)
+# TODO: Set up clipboard utility
+# TODO: Set up logout utility
 
 ### Startup
 exec nm-applet --indicator &
@@ -50,8 +50,8 @@ bindgesture swipe:right workspace prev
 bindgesture swipe:left workspace next
 
 ### Window Rules
-for_window [instance="discord"] floating toggle
-for_window [instance="armcord"] floating toggle
+for_window [instance="armcord"] move scratchpad
+for_window [con_mark="ncspot"] move scratchpad
 for_window [app_id="imv"] floating toggle
 
 ### Appearance
@@ -65,7 +65,7 @@ client.unfocused        $bg2     $bg1     $fg1     $ac2     $bg2
 
 font Fira Sans 11
 
-### Key bindings
+## Key bindings
 bindsym $mod+Return exec $term
 
 bindsym $mod+Shift+q kill
@@ -73,13 +73,11 @@ bindsym $mod+Shift+q kill
 bindsym $mod+space exec $menu
 
 bindsym $mod+Control+1 exec firefox
-bindsym $mod+Control+2 exec pcmanfm
+bindsym $mod+Control+2 exec thunar
 
 # Super + leftMouse = moveWindow
 # Super + rightMouse = resizeWindow
 floating_modifier $mod normal
-
-floating_minimum_size 1200 x 800
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
