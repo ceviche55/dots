@@ -43,7 +43,7 @@
 	# alternate-result-background-corner-radius = 0
 
 	# Selection text
-	selection-color = #959A6B
+	# selection-color = #959A6B
 	selection-background = #453636
 	selection-background-padding = 4
 	selection-background-corner-radius = 4
@@ -112,19 +112,19 @@
 	height = 50%
 
 	# Window background color
-	background-color = #1B1D1E
+	# background-color = #1B1D1E
 
 	# Width of the border outlines in pixels.
-	outline-width = 4
+	# outline-width = 4
 
 	# Border outline color
-	outline-color = #080800
+	# outline-color = #080800
 
 	# Width of the border in pixels.
-	border-width = 12
+	border-width = 4
 
 	# Border color
-	border-color = #F92672
+	border-color = #959A6B
 
 	# Radius of window corners in pixels.
 	corner-radius = 0
