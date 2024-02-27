@@ -6,6 +6,9 @@
     "modules-left": ["clock#time", "sway/workspaces"],
     //"modules-center": ["sway/window"],
     "modules-right": ["tray", "battery", "pulseaudio", "memory", "clock#cal"],
+    "tray": {
+        "spacing": 6
+    },
     "clock#time": {
         "format": "{:%I:%M}"
     },
