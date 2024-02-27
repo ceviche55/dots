@@ -5,7 +5,7 @@
 
 ### Startup
 exec nm-applet --indicator &
-exec flatpak run com.github.zocker_160.SyncThingy
+exec syncthing &
 
 ### Variables
 set $mod Mod4
@@ -29,7 +29,7 @@ set $ac2 #E39C45
 set $menu tofi-drun
 
 # Output configuration
-output * bg ~/wallpaperDot/biscuitDark/ethiopianBiscuit.png fill
+output * bg ~/wallpaperDot/biscuitDark/bordeauxTheHarbor.png center #2D2424
 
 ### Idle configuration
 exec swayidle -w \
@@ -50,13 +50,20 @@ bindgesture swipe:right workspace prev
 bindgesture swipe:left workspace next
 
 ### Window Rules
+for_window [app_id=".*"] border normal 3
+
 for_window [instance="armcord"] move scratchpad
-for_window [con_mark="ncspot"] move scratchpad
+for_window [instance="spotify"] move scratchpad
+for_window [instance="discord"] move scratchpad
+
 for_window [app_id="imv"] floating toggle
+for_window [app_id="blueman-manager"] floating toggle
+for_window [app_id="Slack"] floating toggle
+for_window [app_id="localsend"] floating toggle
 
 ### Appearance
 gaps inner 15
-gaps outer 25
+gaps outer 30
 
 # Colors                border   bg       text     indi     childborder
 client.focused          $ac1     $ac1     $fg1     $ac2     $ac1
@@ -71,6 +78,8 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 bindsym $mod+space exec $menu
+
+bindsym $mod+Shift+p exec ~/scriptsDot/powermenu.sh
 
 bindsym $mod+Control+1 exec firefox
 bindsym $mod+Control+2 exec thunar
