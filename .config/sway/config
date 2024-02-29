@@ -5,6 +5,7 @@
 
 ### Startup
 exec nm-applet --indicator &
+exec blueman-applet &
 exec syncthing &
 
 ### Variables
@@ -60,6 +61,7 @@ for_window [app_id="imv"] floating toggle
 for_window [app_id="blueman-manager"] floating toggle
 for_window [app_id="Slack"] floating toggle
 for_window [app_id="localsend"] floating toggle
+for_window [app_id="org.telegram.desktop"] floating toggle
 for_window [instance="bauh"] floating toggle
 
 ### Appearance
