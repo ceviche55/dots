@@ -16,7 +16,7 @@ set $down j
 set $up k
 set $right l
 
-set $term kitty
+set $term wezterm
 
 # Colors
 set $bg1 #1A1515
@@ -62,16 +62,19 @@ for_window [app_id="blueman-manager"] floating toggle
 for_window [app_id="Slack"] floating toggle
 for_window [app_id="localsend"] floating toggle
 for_window [app_id="org.telegram.desktop"] floating toggle
+for_window [app_id="osc"] floating toggle
+for_window [app_id="thunar"] floating toggle
 for_window [instance="bauh"] floating toggle
+for_window [instance="steamwebhelper"] floating toggle
 
 ### Appearance
 gaps inner 15
 gaps outer 30
 
 # Colors                border   bg       text     indi     childborder
-client.focused          $ac1     $ac1     $fg1     $ac2     $ac1
-client.focused_inactive $bg2     $bg2     $fg1     $ac2     $bg2
-client.unfocused        $bg2     $bg1     $fg1     $ac2     $bg2
+client.focused          $ac2     $ac2     $fg1     $ac1     $ac2
+client.focused_inactive $bg2     $bg2     $fg1     $ac1     $bg2
+client.unfocused        $bg2     $bg1     $fg1     $ac1     $bg2
 
 font Fira Sans Bold 12
 
