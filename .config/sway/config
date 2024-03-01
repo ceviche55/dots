@@ -18,6 +18,9 @@ set $right l
 
 set $term wezterm
 
+set $enterResize exec swaymsg mode "resize" && swaynag -m 'Resize / Move Mode Active'
+set $leaveResize exec swaymsg mode "default" && killall swaynag
+
 # Colors
 set $bg1 #1A1515
 set $bg2 #453636
@@ -53,9 +56,8 @@ bindgesture swipe:left workspace next
 ### Window Rules
 for_window [app_id=".*"] border normal 3
 
-for_window [instance="armcord"] move scratchpad
 for_window [instance="spotify"] move scratchpad
-for_window [instance="discord"] move scratchpad
+for_window [instance="signal"] move scratchpad
 
 for_window [app_id="imv"] floating toggle
 for_window [app_id="blueman-manager"] floating toggle
@@ -66,6 +68,8 @@ for_window [app_id="osc"] floating toggle
 for_window [app_id="thunar"] floating toggle
 for_window [instance="bauh"] floating toggle
 for_window [instance="steamwebhelper"] floating toggle
+for_window [instance="discord"] floating toggle
+for_window [instance="armcord"] floating toggle
 
 ### Appearance
 gaps inner 15
@@ -173,7 +177,7 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 10%+
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 10%-
 
 # Resizing containers
-bindsym $mod+r mode "resize"
+bindsym $mod+r $enterResize
 
 mode "resize" {
     bindsym $left resize shrink width 200px
@@ -182,8 +186,8 @@ mode "resize" {
     bindsym $up resize shrink height 20px
 
     # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym Return $leaveResize
+    bindsym Escape $leaveResize
 }
 
 #Screenshot stuffs
