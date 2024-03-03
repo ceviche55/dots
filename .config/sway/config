@@ -57,6 +57,7 @@ for_window [app_id=".*"] border normal 3
 
 for_window [instance="spotify"] move scratchpad
 for_window [instance="signal"] move scratchpad
+for_window [app_id="ncspot"] move scratchpad
 
 for_window [app_id="imv"] floating toggle
 for_window [app_id="blueman-manager"] floating toggle
