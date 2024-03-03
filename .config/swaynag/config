@@ -1,3 +1,6 @@
-edge=bottom
+[normal]
 background=CF223E
+border-bottom=CF223E
 text=FFE9C7
+font=Fira Sans
+edge=top

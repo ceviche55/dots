@@ -18,7 +18,7 @@ set $right l
 
 set $term kitty
 
-set $enterResize exec swaymsg mode "resize" && swaynag -m 'Resize / Move Mode Active'
+set $enterResize exec swaymsg mode "resize" && swaynag -m 'Resize / Move Mode Active' -t normal
 set $leaveResize exec swaymsg mode "default" && killall swaynag
 
 # Colors
@@ -37,8 +37,8 @@ output * bg ~/wallpaperDot/biscuitDark/bordeauxTheHarbor.png center #2D2424
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 300 'hyprlock' \
-    before-sleep 'hyprlock'
+    timeout 600 'swaylock' \
+    before-sleep 'swaylock'
 
 ### Input configuration
 input type:touchpad {
