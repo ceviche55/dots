@@ -16,7 +16,7 @@ set $down j
 set $up k
 set $right l
 
-set $term wezterm
+set $term kitty
 
 set $enterResize exec swaymsg mode "resize" && swaynag -m 'Resize / Move Mode Active'
 set $leaveResize exec swaymsg mode "default" && killall swaynag
@@ -37,9 +37,8 @@ output * bg ~/wallpaperDot/biscuitDark/bordeauxTheHarbor.png center #2D2424
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 300 'swaylock' \
-    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock'
+    timeout 300 'hyprlock' \
+    before-sleep 'hyprlock'
 
 ### Input configuration
 input type:touchpad {
@@ -64,8 +63,9 @@ for_window [app_id="blueman-manager"] floating toggle
 for_window [app_id="Slack"] floating toggle
 for_window [app_id="localsend"] floating toggle
 for_window [app_id="org.telegram.desktop"] floating toggle
-for_window [app_id="osc"] floating toggle
 for_window [app_id="thunar"] floating toggle
+for_window [app_id="xdg-desktop-portal-gtk"] floating toggle
+for_window [app_id="kittyf"] floating toggle
 for_window [instance="bauh"] floating toggle
 for_window [instance="steamwebhelper"] floating toggle
 for_window [instance="discord"] floating toggle
@@ -84,10 +84,11 @@ font Fira Sans Bold 12
 
 titlebar_padding 18 6
 
-for_window [title="."] title_format "%app_id | %title"
+for_window [title="."] title_format "%title | %app_id"
 
 ## Key bindings
 bindsym $mod+Return exec $term
+bindsym $mod+Control+Return exec $term --class kittyf
 
 bindsym $mod+Shift+q kill
 
