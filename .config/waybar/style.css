@@ -11,12 +11,9 @@ window#waybar {
 
 #clock.time {
     margin: 0 20px;
+    font-weight: bold;
 }
 
 #clock.cal {
-    margin: 0 20px;
-}
-
-#tray {
     margin: 0 20px;
 }
