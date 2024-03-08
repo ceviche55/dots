@@ -7,6 +7,7 @@
 exec nm-applet --indicator &
 exec blueman-applet &
 exec syncthing &
+exec wl-paste --watch cliphist store &
 
 ### Variables
 set $mod Mod4
@@ -202,6 +203,9 @@ bindsym Print exec grim -g "$(slurp)" - | wl-copy
 bindsym Print+Shift exec grim -g "$(slurp)" - | swappy -f -
 bindsym $mod+Alt+3 exec grim -g "$(slurp)" - | wl-copy
 bindsym $mod+Alt+4 exec grim -g "$(slurp)" - | swappy -f -
+
+# Clipboard History Picker
+bindsym $mod+Shift+v exec cliphist list | tofi | cliphist decode | wl-copy
 
 ### Bar Configuration
 bar {
