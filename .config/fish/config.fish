@@ -22,7 +22,7 @@ end
 
 alias clr=clear
 alias vi=nvim
-alias lzg=lazygit
+alias gui=gitui
 alias ls="eza --icons"
 alias cat=bat
 alias :wq=exit
