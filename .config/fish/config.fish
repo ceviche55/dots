@@ -23,7 +23,6 @@ end
 alias clr=clear
 alias vi=nvim
 alias lzg=lazygit
-alias zj=zellij
 alias ls="eza --icons"
 alias cat=bat
 alias :wq=exit
