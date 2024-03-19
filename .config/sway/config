@@ -8,7 +8,6 @@ exec nm-applet --indicator &
 exec blueman-applet &
 exec syncthing &
 exec wl-paste --watch cliphist store &
-exec pactl load-module module-switch-on-connect
 
 ### Variables
 set $mod Mod4
@@ -42,6 +41,8 @@ exec swayidle -w \
     timeout 600 'swaylock' \
     before-sleep 'swaylock'
 
+# inhibit_idle fullscreen
+
 ### Input configuration
 input type:touchpad {
     dwt enabled
@@ -59,16 +60,17 @@ for_window [app_id=".*"] border normal 3
 
 for_window [app_id="imv"] floating enable
 for_window [app_id="blueman-manager"] floating enable
-for_window [app_id="Slack"] floating enable
 for_window [app_id="localsend"] floating enable
-for_window [app_id="org.telegram.desktop"] floating enable
 for_window [app_id="thunar"] floating enable
 for_window [app_id="xdg-desktop-portal-gtk"] floating enable
-for_window [app_id="kittyf"] floating enable
+for_window [app_id="kittyf"] floating enable, resize set width 60 ppt height 60 ppt
 for_window [app_id="python3"] floating enable
+for_window [app_id="xarchiver"] floating enable
 for_window [instance="steamwebhelper"] floating enable
-for_window [instance="discord"] floating enable
-for_window [instance="armcord"] floating enable
+# for_window [app_id="org.telegram.desktop"] floating enable
+# for_window [app_id="Slack"] floating enable
+# for_window [instance="discord"] floating enable
+# for_window [instance="armcord"] floating enable
 
 ### Appearance
 gaps inner 15
@@ -79,11 +81,11 @@ client.focused          $ac2     $ac2     $fg1     $ac1     $ac2
 client.focused_inactive $bg2     $bg2     $fg1     $ac1     $bg2
 client.unfocused        $bg2     $bg1     $fg1     $ac1     $bg2
 
-font Fira Sans Bold 12
+font pango:Fira Sans 12
 
 titlebar_padding 18 6
 
-for_window [title="."] title_format "%title | %app_id"
+for_window [title="."] title_format "%title | <b>%app_id</b>"
 
 ## Key bindings
 bindsym $mod+Return exec $term
@@ -150,12 +152,9 @@ bindsym $mod+period workspace next
 bindsym $mod+comma workspace prev
 
 # Layout stuff
-bindsym $mod+b splith
-bindsym $mod+v splitv
+bindsym $mod+y splitt
 
-bindsym $mod+Shift+t layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+t layout toggle tabbed stacking splith
 
 bindsym $mod+Control+f fullscreen
 bindsym $mod+Shift+f floating toggle
@@ -167,8 +166,6 @@ bindsym $mod+Shift+a focus child
 # Scratchpad
 bindsym $mod+s scratchpad show
 bindsym $mod+Shift+s move scratchpad
-
-# Special Keys
 
 # Media Keys
 bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 10%+
@@ -195,14 +192,14 @@ mode "resize" {
     bindsym Escape $leaveResize
 }
 
-#Screenshot stuffs
+# Screenshot stuffs
 bindsym Print exec grim -g "$(slurp)" - | wl-copy
 bindsym Print+Shift exec grim -g "$(slurp)" - | swappy -f -
 bindsym $mod+Alt+3 exec grim -g "$(slurp)" - | wl-copy
 bindsym $mod+Alt+4 exec grim -g "$(slurp)" - | swappy -f -
 
 # Clipboard History Picker
-bindsym $mod+Shift+v exec cliphist list | tofi | cliphist decode | wl-copy
+bindsym $mod+v exec cliphist list | tofi | cliphist decode | wl-copy
 
 ### Bar Configuration
 bar {
@@ -211,4 +208,4 @@ bar {
 
 ### Misc Wayland Configuration
 include /etc/sway/config.d/*
-include ~/.config/swaySpec/specConfig
+include ~/.config/swaySpec/config
