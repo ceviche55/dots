@@ -23,7 +23,7 @@
 	# Input text theme
 	# input-color = #FFFFFF
 	input-background = #00000000
-	input-background-padding = 0
+	input-background-padding = 9
 	input-background-corner-radius = 0
 
 	# Default result text theme
@@ -43,7 +43,7 @@
 	# alternate-result-background-corner-radius = 0
 
 	# Selection text
-	# selection-color = #959A6B
+	selection-color = #959A6B
 	selection-background = #453636
 	selection-background-padding = 4
 	selection-background-corner-radius = 4
@@ -96,7 +96,7 @@
 	num-results = 0
 
 	# Spacing between results in pixels. Can be negative.
-	result-spacing = 0
+	result-spacing = 6
 
 	# List results horizontally.
 	horizontal = false
@@ -112,28 +112,28 @@
 	height = 50%
 
 	# Window background color
-	# background-color = #1B1D1E
+	background-color = #2D2424
 
 	# Width of the border outlines in pixels.
-	# outline-width = 4
+	outline-width = 0
 
 	# Border outline color
 	# outline-color = #080800
 
 	# Width of the border in pixels.
-	border-width = 4
+	border-width = 6
 
 	# Border color
-	border-color = #959A6B
+	border-color = #614F76
 
 	# Radius of window corners in pixels.
 	corner-radius = 0
 
 	# Padding between borders and text. Can be pixels or a percentage.
-	padding-top = 8
-	padding-bottom = 8
-	padding-left = 8
-	padding-right = 8
+	padding-top = 15
+	padding-bottom = 15
+	padding-left = 15
+	padding-right = 15
 
 	# Whether to clip text drawing to be within the specified padding. This
 	# is mostly important for allowing text to be inset from the border,

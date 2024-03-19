@@ -21,6 +21,7 @@ function yz
 end
 
 alias clr=clear
+alias py=python
 alias vi=nvim
 alias gui=gitui
 alias ls="eza --icons"
