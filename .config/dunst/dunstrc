@@ -1,0 +1,23 @@
+[global]
+    width = 315
+    height = 135
+    origin = bottom-right
+    offset = 90x90
+    gap_size = 6
+    padding = 6
+    font = "FiraSans 12"
+    format = "<b>%a </b>%s\n%b"
+    show_indicators = false
+    foreground = "#FFE9C7"
+    min_icon_size = "64x64"
+    max_icon_size = "64x64"
+    frame_color = "#453636"
+
+[urgency_low]
+    background = "#2D2424"
+
+[urgency_normal]
+    background = "#F07342"
+
+[urgency_critical]
+    background = "#CF223E"
