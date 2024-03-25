@@ -7,7 +7,7 @@
 exec nm-applet --indicator &
 exec blueman-applet &
 exec syncthing &
-exec wl-paste --watch cliphist store &
+exec wl-paste --watch ~/go/bin/cliphist store &
 
 ### Variables
 set $mod Mod4
@@ -45,11 +45,12 @@ exec swayidle -w \
 
 ### Input configuration
 input type:touchpad {
-    dwt enabled
+    dwt disabled
     tap disabled
     scroll_factor 0.25
     natural_scroll enabled
     middle_emulation enabled
+    click_method clickfinger
 }
 
 bindgesture swipe:right workspace prev
@@ -101,7 +102,7 @@ bindsym $mod+Control+1 exec firefox
 bindsym $mod+Control+2 exec thunar
 
 bindsym $mod+c move position center
-bindsym $mod+g resize set width 60 ppt
+bindsym $mod+g resize set width 60 ppt height 85 ppt
 bindsym $mod+Shift+g resize set width 85 ppt height 85 ppt
 
 # Super + leftMouse = moveWindow
@@ -175,6 +176,9 @@ bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ to
 bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
+bindsym --locked XF86AudioRaiseVolume+Shift exec playerctl next
+bindsym --locked XF86AudioLowerVolume+Shift exec playerctl play-pause
+bindsym --locked XF86AudioMute+Shift exec playerctl previous
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 10%+
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 10%-
 
