@@ -9,15 +9,15 @@
     format = "<b>%a </b>%s\n%b"
     show_indicators = false
     foreground = "#FFE9C7"
-    min_icon_size = "64x64"
-    max_icon_size = "64x64"
-    frame_color = "#453636"
+    min_icon_size = 64
+    max_icon_size = 64
+    background = "#453636"
 
 [urgency_low]
-    background = "#2D2424"
+    frame_color  = "#2D2424"
 
 [urgency_normal]
-    background = "#F07342"
+    frame_color  = "#F07342"
 
 [urgency_critical]
-    background = "#CF223E"
+    frame_color = "#CF223E"
