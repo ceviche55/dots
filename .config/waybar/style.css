@@ -17,3 +17,16 @@ window#waybar {
 #clock.cal {
     margin: 0 20px;
 }
+
+#workspaces button {
+    color: #725A5A;
+}
+
+#workspaces button.focused {
+    color: #FFE9C7;
+}
+
+#battery.charging,
+#battery.full {
+    color: #959A6B;
+}

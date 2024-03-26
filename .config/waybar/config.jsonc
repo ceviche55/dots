@@ -24,6 +24,7 @@
         "format": "󰍛 {percentage}%"
     },
     "clock#cal": {
-        "format": "{:%a %b %d}"
+        "format": "{:%a %b %d}",
+        "tooltip-format": "<tt>{calendar}</tt>"
     }
 }

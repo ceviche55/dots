@@ -84,7 +84,7 @@ client.unfocused        $bg2     $bg1     $fg1     $ac1     $bg2
 
 font pango:Fira Sans 12
 
-titlebar_padding 18 6
+titlebar_padding 24 6
 
 for_window [title="."] title_format "%title | <b>%app_id</b>"
 
@@ -179,8 +179,8 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --locked XF86AudioRaiseVolume+Shift exec playerctl next
 bindsym --locked XF86AudioLowerVolume+Shift exec playerctl play-pause
 bindsym --locked XF86AudioMute+Shift exec playerctl previous
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 10%+
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # Resizing containers
 bindsym $mod+r $enterResize
