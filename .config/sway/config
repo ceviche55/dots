@@ -157,9 +157,9 @@ bindsym $mod+y splitt
 
 bindsym $mod+t layout toggle tabbed stacking splith
 
-bindsym $mod+Control+f fullscreen
-bindsym $mod+Shift+f floating toggle
-bindsym $mod+f focus mode_toggle
+bindsym $mod+m fullscreen
+bindsym $mod+f floating toggle
+bindsym $mod+e focus mode_toggle
 
 bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
