@@ -1,13 +1,10 @@
 # Sway Config
-# TODO: Set up floating rules for: Spotify, Slack, Discord, PCMANFM, Signal, Telegram
-# TODO: Set up clipboard utility
-# TODO: Set up logout utility
 
 ### Startup
 exec nm-applet --indicator &
 exec blueman-applet &
 exec syncthing &
-exec wl-paste --watch ~/go/bin/cliphist store &
+# exec wl-paste --watch ~/go/bin/cliphist store &
 
 ### Variables
 set $mod Mod4
@@ -60,18 +57,16 @@ bindgesture swipe:left workspace next
 for_window [app_id=".*"] border normal 3
 
 for_window [app_id="imv"] floating enable
+for_window [app_id="mpv"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="localsend"] floating enable
+for_window [app_id="Thunar"] floating enable
 for_window [app_id="thunar"] floating enable
 for_window [app_id="xdg-desktop-portal-gtk"] floating enable
 for_window [app_id="kittyf"] floating enable, resize set width 60 ppt height 60 ppt
 for_window [app_id="python3"] floating enable
 for_window [app_id="xarchiver"] floating enable
 for_window [instance="steamwebhelper"] floating enable
-# for_window [app_id="org.telegram.desktop"] floating enable
-# for_window [app_id="Slack"] floating enable
-# for_window [instance="discord"] floating enable
-# for_window [instance="armcord"] floating enable
 
 ### Appearance
 gaps inner 15
@@ -84,9 +79,9 @@ client.unfocused        $bg2     $bg1     $fg1     $ac1     $bg2
 
 font pango:Fira Sans 12
 
-titlebar_padding 24 6
+titlebar_padding 18 9
 
-for_window [title="."] title_format "%title | <b>%app_id</b>"
+for_window [title="."] title_format "%title | <b>%app_id</b> | %instance"
 
 ## Key bindings
 bindsym $mod+Return exec $term
@@ -102,12 +97,14 @@ bindsym $mod+Control+1 exec firefox
 bindsym $mod+Control+2 exec thunar
 
 bindsym $mod+c move position center
-bindsym $mod+g resize set width 60 ppt height 85 ppt
+bindsym $mod+g resize set width 65 ppt height 85 ppt
 bindsym $mod+Shift+g resize set width 85 ppt height 85 ppt
 
 # Super + leftMouse = moveWindow
 # Super + rightMouse = resizeWindow
 floating_modifier $mod normal
+# focus_follows_mouse always
+mouse_warping container
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload

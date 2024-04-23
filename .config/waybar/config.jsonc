@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "bottom",
-    "width": 1000,
+    "width": 1400,
     "height": 30,
     "spacing": 9,
     "modules-left": ["clock#time", "sway/workspaces"],
@@ -15,10 +15,12 @@
     },
     "battery": {
         "format": " {icon}  {capacity}%",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "interval": 3
     },
     "pulseaudio": {
-        "format": "󰕾 {volume}%"
+        "format": "󰕾 {volume}%",
+        "format-muted": "󰝟 0%"
     },
     "memory": {
         "format": "󰍛 {percentage}%"

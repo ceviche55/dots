@@ -106,8 +106,8 @@
 ### Window theming
 #
 	# Width and height of the window. Can be pixels or a percentage.
-	width = 20%
-	height = 50%
+	width = 15%
+	height = 40%
 
 	# Window background color
 	background-color = #2D2424
@@ -122,7 +122,7 @@
 	border-width = 6
 
 	# Border color
-	border-color = #614F76
+	border-color = #AE3F82
 
 	# Radius of window corners in pixels.
 	corner-radius = 0
@@ -152,7 +152,7 @@
 	#
 	# Supported values: top-left, top, top-right, right, bottom-right,
 	# bottom, bottom-left, left, center.
-	anchor = bottom-left
+	anchor = bottom
 
 	# Set the size of the exclusive zone.
 	#

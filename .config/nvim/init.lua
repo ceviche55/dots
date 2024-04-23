@@ -12,13 +12,7 @@ vim.g.have_nerd_font = true
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftround = true
-vim.opt.expandtab = true
-
-vim.opt.smartindent = true
+-- vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.o.wrap = true
 vim.o.linebreak = true
@@ -27,7 +21,6 @@ vim.o.linebreak = true
 vim.opt.number = true
 -- You can also add relative line numbers, for help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -548,7 +541,14 @@ require('lazy').setup({
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
+        javascript = { 'prettier' },
+        javascriptreact = { 'prettier' },
+        typescript = { 'prettier' },
+        typescriptreact = { 'prettier' },
+        css = { 'prettier' },
+        go = { 'gofmt', 'goimports', 'golines' },
+        json = { 'fixjson' },
+        md = { { 'mdformat', 'prettier' } },
       },
     },
   },
@@ -571,6 +571,7 @@ require('lazy').setup({
         end)(),
       },
       'saadparwaiz1/cmp_luasnip',
+      'rafamadriz/friendly-snippets',
 
       -- Adds other completion capabilities.
       --  nvim-cmp does not ship with all sources by default. They are split
@@ -645,6 +646,7 @@ require('lazy').setup({
       }
     end,
   },
+  { 'windwp/nvim-ts-autotag' },
 
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
@@ -703,6 +705,7 @@ require('lazy').setup({
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
+      require('mini.pairs').setup()
     end,
   },
 

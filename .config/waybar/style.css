@@ -30,3 +30,7 @@ window#waybar {
 #battery.full {
     color: #959A6B;
 }
+
+#pulseaudio.muted {
+    color: #AE4750;
+}

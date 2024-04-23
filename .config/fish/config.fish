@@ -22,9 +22,10 @@ function yz
 end
 
 alias clr=clear
-alias py=python
+alias py3=python3
 alias vi=nvim
 alias gui=gitui
 alias ls="eza --icons"
 alias cat=bat
 alias :wq=exit
+alias sshk="kitten ssh"

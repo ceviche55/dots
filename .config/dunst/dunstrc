@@ -1,6 +1,6 @@
 [global]
-    width = 315
-    height = 135
+    width = 270
+    height = 180
     origin = bottom-right
     offset = 90x90
     gap_size = 6
@@ -11,10 +11,10 @@
     foreground = "#FFE9C7"
     min_icon_size = 64
     max_icon_size = 64
-    background = "#453636"
+    background  = "#2D2424"
 
 [urgency_low]
-    frame_color  = "#2D2424"
+    frame_color = "#453636"
 
 [urgency_normal]
     frame_color  = "#F07342"
