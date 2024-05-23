@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<labwc_config>
+  <core>
+    <gap>15</gap>
+    <adaptiveSync>yes</adaptiveSync>
+  </core>
+  <placement policy="automatic"/>
+  <focus followMouse="yes"/>
+  <desktop number="1"> <name>I</name> </desktop>
+  <desktop number="2"> <name>II</name> </desktop>
+  <desktop number="3"> <name>III</name> </desktop>
+  <theme>
+    <cornerRadius>9</cornerRadius>
+    <font name="Fira Sans" size="12"/>
+  </theme>
+  <margin top="21" bottom="21" left="30" right="30"/>
+  <!-- Keyboad shortcuts from labwc-actions -->
+  <keyboard><default/></keyboard>
+</labwc_config>
