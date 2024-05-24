@@ -1,0 +1,8 @@
+# Background Color
+swaybg -c '#282828' >/dev/null 2>&1 &
+
+# Monitor Resolution and Refresh Rate
+wlr-randr --output eDP-1 --mode 1920x1080@60Hz >/dev/null 2>&1 &
+
+# Launch Waybar
+waybar >/dev/null 2>&1 &

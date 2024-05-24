@@ -4,16 +4,28 @@
     <gap>15</gap>
     <adaptiveSync>yes</adaptiveSync>
   </core>
-  <placement policy="automatic"/>
+  <placement policy="center"/>
   <focus followMouse="yes"/>
   <desktop number="1"> <name>I</name> </desktop>
   <desktop number="2"> <name>II</name> </desktop>
-  <desktop number="3"> <name>III</name> </desktop>
   <theme>
-    <cornerRadius>9</cornerRadius>
+    <cornerRadius>6</cornerRadius>
     <font name="Fira Sans" size="12"/>
   </theme>
   <margin top="21" bottom="21" left="30" right="30"/>
   <!-- Keyboad shortcuts from labwc-actions -->
-  <keyboard><default/></keyboard>
+  <keyboard>
+    <keybind key="W-1">
+     <action name="GoToDesktop" to="1" />
+    </keybind>
+    <keybind key="W-2">
+     <action name="GoToDesktop" to="2" />
+    </keybind>
+    <keybind key="W-Return">
+     <action name="Execute" command="kitty" />
+    </keybind>
+    <keybind key="W-Space">
+     <action name="Execute" command="rofi -show drun" />
+    </keybind>
+  </keyboard>
 </labwc_config>
