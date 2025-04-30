@@ -2,6 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+fzf --fish | source
 starship init fish | source
 
 fish_add_path ~/.cargo/bin/
@@ -26,6 +27,7 @@ alias py3=python3
 alias vi=nvim
 alias gui=gitui
 alias ls="eza --icons"
+alias ll="eza --icons -l"
 alias cat=bat
 alias :wq=exit
 alias sshk="kitten ssh"
