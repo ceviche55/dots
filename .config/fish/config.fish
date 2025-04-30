@@ -9,6 +9,7 @@ fish_add_path ~/.cargo/bin/
 fish_add_path ~/go/bin/
 fish_add_path ~/.local/bin/
 fish_add_path ~/.juliaup/bin/
+fish_add_path /opt/homebrew/bin/gh
 
 set fish_greeting
 set -gx EDITOR nvim
