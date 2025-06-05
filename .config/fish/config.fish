@@ -12,7 +12,7 @@ fish_add_path ~/.juliaup/bin/
 fish_add_path /opt/homebrew/bin/gh
 
 set fish_greeting
-set -gx EDITOR nvim
+set -gx EDITOR hx
 
 function yz
     set tmp (mktemp -t "yazi-cwd.XXXXX")
@@ -27,8 +27,8 @@ alias clr=clear
 alias py3=python3
 alias vi=nvim
 alias gui=gitui
-alias ls="eza --icons"
-alias ll="eza --icons -l"
+alias ls="eza --icons --sort ext"
+alias ll="eza --icons -l --sort ext"
 alias cat=bat
 alias :wq=exit
 alias sshk="kitten ssh"
