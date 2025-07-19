@@ -8,8 +8,7 @@ true-color = true
 line-number = "relative"
 mouse = false
 rulers = [80]
-scrolloff = 15
-shell = ["zsh", "-c"]
+scrolloff = 10
 bufferline = "always"
 
 [editor.cursor-shape]

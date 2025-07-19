@@ -1,2 +1,4 @@
-set recolor-darkcolor "#FFE9C7"
-set recolor-lightcolor "#2D2424"
+set recolor true
+set recolor-lightcolor "#1D2021"
+set recolor-darkcolor "#D4BE98"
+set adjust-open "width"
