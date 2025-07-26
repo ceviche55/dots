@@ -13,6 +13,7 @@ fish_add_path /opt/homebrew/bin/gh
 
 set fish_greeting
 set -gx EDITOR hx
+set -g fish_key_bindings fish_vi_key_bindings
 
 function yz
     set tmp (mktemp -t "yazi-cwd.XXXXX")
@@ -63,7 +64,7 @@ function md2half
     set inputFile $argv[1]
     set outputFile (path basename -E $inputFile)
 
-    pandoc inputFile -o "$outputFile.pdf" \
+    pandoc $inputFile -o "$outputFile.pdf" \
         --template=hamu.tex \
         --pdf-engine=xelatex \
         -V papersize="5.5in,8.5in"
@@ -78,7 +79,7 @@ function md2pmn
     set inputFile $argv[1]
     set outputFile (path basename -E $inputFile)
 
-    pandoc $argv -o "$outputFile.pdf" \
+    pandoc $inputFile -o "$outputFile.pdf" \
         --template=hamu.tex \
         --pdf-engine=xelatex \
         -V two_column=true \
@@ -118,8 +119,8 @@ alias :q=exit
 alias :x=exit
 alias sshk="kitten ssh"
 alias presi=presenterm
-alias yza="yz /Volumes/hamuDrive"
-alias yzn="yz ~/notesRepo/"
+alias yza="cd /Volumes/hamuDrive;yz /Volumes/hamuDrive"
+alias yzn="cd ~/notesRepo/; yz ~/notesRepo/"
 
 # Added by LM Studio CLI (lms)
 set -gx PATH $PATH /Users/hamu/.lmstudio/bin
