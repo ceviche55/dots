@@ -1,1 +1,6 @@
 \.DS_Store
+README.md
+.gitignore
+.git
+.stow-local-ignore
+dot-config/configArchive/
